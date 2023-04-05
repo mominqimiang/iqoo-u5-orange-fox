@@ -43,6 +43,11 @@ TARGET_NO_BOOTLOADER := true
 # Display
 TARGET_SCREEN_DENSITY := 480
 
+
+# Battery capacity node
+BOARD_BATTERY_CAPACITY_NODE := /sys/class/power_supply/battery/capacity
+BOARD_BATTERY_VOLTAGE_NODE := /sys/class/power_supply/battery/voltage_now
+
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 3
 BOARD_KERNEL_CMDLINE := console=null earlycon=null androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=4e00000.dwc3 swiotlb=0 loop.max_part=7 cgroup.memory=nokmem,nosocket iptable_raw.raw_before_defrag=1 ip6table_raw.raw_before_defrag=1 product.version=PD2165_A_12.0.13.15.W10 fingerprint.abbr=11/RP1A.200720.012 region_ver=W10 product.solution=QCOM buildvariant=user androidboot.securebootkeyhash=2c0a52ffbd8db687b56f6a98d8840f46597a4dde6d9dc8d00039873ce6d74f60 androidboot.securebootkeyver=4 androidboot.selinux=permissive twrp=1
@@ -141,3 +146,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_LIBRESETPROP := true
+
+
+# Enable Magisk
+TW_USE_MAGISK := true
